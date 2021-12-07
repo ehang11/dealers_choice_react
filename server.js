@@ -4,6 +4,11 @@ const path = require("path");
 const { syncAndSeed } = require("./db");
 const { conn } = require("./db");
 
+//parsing middleware
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+//static middleware
 app.use("/dist", express.static(path.join(__dirname, "dist")));
 
 app.get("/", (req, res, next) =>
