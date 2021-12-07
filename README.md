@@ -2,27 +2,22 @@
 
 - Program: To-Do List
 - Purpose: Deploy a full-stack web application which tracks task
-- Source: https://api.coindesk.com/v1/bpi/historical/close.json
 
 # Project Structure/Project Stack
 
-## Backend:
+## Backend
 
 - Node.js (Server-side enviroment)
   - Express (Server Framework)
 - PostgreSQL (Relational Database)
 
-## Frontend:
+## Frontend
 
 - React.js (Frontend Framework )
 
   - Axios (Data fetching library)
 
-- 'server/': contains database and server
-- 'client/': contains components and index
-- 'public/': contains images, css
-
-# Setup
+## Setup
 
 - `npm install`
 - `npm start`
