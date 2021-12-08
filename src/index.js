@@ -1,13 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import axios from "axios";
+import App from "./App";
 
-class Main extends React.Component {
-  constructor() {
-    super();
-  }
-}
-
-//async componentDidMount() {}
-
-//render() {}
+ReactDOM.render(<App />, document.getElementById("home"));

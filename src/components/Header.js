@@ -1,9 +1,9 @@
 import React from "react";
 
-const Header = () => {
+const Header = ({ SelectedNFT }) => {
   return (
     <header>
-      <h1> Due - To Do List </h1>
+      <h1> MetaGallery: NFT Art Gallery </h1>
       <h2> React: Web Application Project </h2>
     </header>
   );

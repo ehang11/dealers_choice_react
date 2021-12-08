@@ -1,7 +1,7 @@
 # Dealers Choice: React
 
-- Program: To-Do List
-- Purpose: Deploy a full-stack web application which tracks task
+- Project Title: MetaGallery: NFT Art Gallery
+- Purpose: Deploy a full-stack web application which displays a gallery of NFT Art
 
 # Project Structure/Project Stack
 
@@ -20,5 +20,5 @@
 ## Setup
 
 - `npm install`
-- `npm start`
+- `npm run start:dev`
 - `npm run seed` to seed the database
