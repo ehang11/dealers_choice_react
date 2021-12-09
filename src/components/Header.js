@@ -10,11 +10,22 @@ const Header = ({ SelectedNFT }) => {
         className="explore"
         onClick={(e) => {
           e.preventDefault();
-          window.location.href = "http://localhost:8000/nft";
+          window.location.href = "http://localhost:8000/";
         }}
       >
         Explore
       </button>
+      {/* 
+      <button
+        type="button"
+        className="create"
+        onClick={(e) => {
+          e.preventDefault();
+          window.location.href = "http://localhost:8000/create";
+        }}
+      >
+        Create
+      </button> */}
     </ul>
   );
 };

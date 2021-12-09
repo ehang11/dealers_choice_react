@@ -1,23 +1,21 @@
 import React from "react";
 
-const Gallery = ({ nft, selectedNFT }) => {
+const Gallery = ({ nft, selectedNFT, artist }) => {
   return (
-    <div id="container">
-      <div className="row wrap">
-        {nft.map((nft) => {
-          return (
+    <div className="grid">
+      {nft.map((nft) => {
+        return (
+          <div className="griditem">
             <div className="nftContainer" key={nft.id}>
-              <div onClick={() => selectFood(nft.id)}>
+              <div onClick={() => selectedNFT(nft.id)}>
                 <img id="nftImage" src={nft.imgURL} />
               </div>
-              <h1>{nft.name}</h1>
-              <div>
-                <img id="artistImage" src={nft?.artist?.imgURL} />
-              </div>
+              <div className="title">{nft.name}</div>
+              <img id="artistImage" src={nft.author} />
             </div>
-          );
-        })}
-      </div>
+          </div>
+        );
+      })}
     </div>
   );
 };

@@ -12,7 +12,7 @@ const SelectedNFT = ({ nft, selectedNFT }) => {
               </div>
               <h1>{nft.name}</h1>
               <div>
-                <img id="artistImage" src={nft?.artist.imgURL} />
+                <img id="artistImage" src={nft.author} />
               </div>
             </div>
           );
