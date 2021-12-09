@@ -17,11 +17,11 @@ const NFT = conn.define("NFTs", {
     type: STRING,
     //defaultValue:
   },
-  // blockchain: {
-  //   type: ENUM("Etherium"),
-  //   defaultValue: "Etherium",
-  // },
 
+  author: {
+    type: STRING,
+    allowNull: false,
+  },
   //Price: in ETH
   price: {
     type: FLOAT,
@@ -76,42 +76,48 @@ const syncAndSeed = async () => {
       name: "CryptoPunk #9998",
       imgURL:
         "https://lh3.googleusercontent.com/O0TPreCr-fnuhYTUGwHPfp3gZgqwAogRrdmkm60Aiozg9kTuyMeIKc_A0I_yBNIJfoISRuGllSHsatOjxxMWHMMxMOhMbpOJ43wM8A=w600",
-      NFTId: CryptoPunks.id,
+
+      author: CryptoPunks.imgURL,
       price: 124457.06,
     });
     const CryptoPunks_7804 = await NFT.create({
       name: "CryptoPunk #7804",
       imgURL:
         "https://lh3.googleusercontent.com/KPQPI9GRwIMPHK5XEgwgH6ATGR4Jxgb2ogyDprxe7H92xv7BubohOQgEP8UN9F5CueXyhxgKCI4Ytb5fP8ww75mE=w600",
-      NFTId: CryptoPunks.id,
+
+      author: CryptoPunks.imgURL,
       price: 4200,
     });
     const Bored_Ape_Yacht_Club_2087 = await NFT.create({
       name: "2087",
       imgURL:
         "https://lh3.googleusercontent.com/EHGOqL4UpxmnvlN6oZoi68uWV6cVi2SpeKydnTcEXKv7qlyHyVNdqtWW8HqZmS394g7pgWFx_qA6HEOhg_ha1f6k90MVQu_3TF4pqQ=w600",
-      NFTId: Bored_Ape_Yacht_Club.id,
+
+      author: Bored_Ape_Yacht_Club.imgURL,
       price: 89.15,
     });
     const Bored_Ape_Yacht_Club_3749 = await NFT.create({
       name: "3749",
       imgURL:
         "https://lh3.googleusercontent.com/grHHS7VLjgmEDagQ7nBar0sFHb0c-BP7v_w_R8aJVpaMrCzk-Yd_CCp3cO9PFlzuDBc_NPLyaZwJpS_Fvz-mHPdl2hs4ukP0e334vw=w600",
-      NFTId: Bored_Ape_Yacht_Club.id,
+
+      author: Bored_Ape_Yacht_Club.imgURL,
       price: 11.18,
     });
     const SuperRare_A_Coin_for_the_Ferryman = await NFT.create({
       name: "A Coin for the Ferryman",
       imgURL:
         "https://lh3.googleusercontent.com/20a2jM3_rkyZpWa6P1pe9zbBsw-a6yPc6ZeMUK_-uEi_lrQk6PKI3E6cRicgyiLRBeBaEhOhrrGfb1CwvnMtumY=w600",
-      NFTId: SuperRare.id,
+
+      author: SuperRare.imgURL,
       price: 1330,
     });
     const SuperRare_All_Time_High_in_the_City = await NFT.create({
       name: "All Time High in the City",
       imgURL:
         "https://lh3.googleusercontent.com/kVXc9_maaBNRhm_N0rFKk3TePsErgI83EqKD9NldgG-ayCFZIdDMAfHqjRHiJiV0IzvNzcH5v3Is8gV4RzAwKHNN=w600",
-      NFTId: SuperRare.id,
+
+      author: SuperRare.imgURL,
       price: 1000,
     });
   } catch (error) {

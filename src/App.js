@@ -12,17 +12,23 @@ class App extends React.Component {
       //NFT, selected NFT from route
       nft: [],
       //selected NFT
-      selectedNFT: {},
+      selectedNFT: "",
     };
   }
 
   componentDidMount = async () => {
-    const nft = (await axios.get("/api/nft")).data;
+    const nft = (await axios.get("/nft")).data;
     this.setState({ nft });
+
+    window.addEventListener("hashchange", async () => {
+      const selected = window.location.hash.slice(1);
+      const selectedNFT = (await axios.get(`/nft/${selected}`)).data;
+      this.setState({ selectedNFT: sele });
+    });
   };
 
-  selectedNFT = async (nftId) => {
-    const selectedNFT = (await axios.get(`/api/foods/${nftId}`)).data;
+  chooseNFT = async (NFTId) => {
+    const selectedNFT = (await axios.get(`/nft/${NFTId}`)).data;
     this.setState({ selectedNFT });
   };
   //create nft
@@ -30,17 +36,17 @@ class App extends React.Component {
   //delete nft
 
   render() {
-    <div id="app">
-      <Header
-        //selectedNFT
-        selectedNFT={this.state.selectedNFT}
-      />
-      {this.state.selectedNFT.id ? (
-        <SelectedNFT selectedNFT={this.state.selectedNFT} />
-      ) : (
-        <Gallery nft={this.state.nft} />
-      )}
-    </div>;
+    return (
+      <div id="app">
+        <Header />
+
+        {this.state.selectedNFT.id ? (
+          <SelectedNFT selectedNFT={this.state.selectedNFT} />
+        ) : (
+          <Gallery nft={this.state.nft} chooseNFT={this.chooseNFT} />
+        )}
+      </div>
+    );
   }
 }
 export default App;

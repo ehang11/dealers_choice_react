@@ -1,22 +1,14 @@
 import React from "react";
 
-const SelectedNFT = ({ nft, selectedNFT }) => {
+const SelectedNFT = ({ selectedNFT }) => {
   return (
-    <div id="container">
-      <div className="row wrap">
-        {nft.map((nft) => {
-          return (
-            <div className="nftContainer" key={nft.id}>
-              <div onClick={() => selectedNFT(nft.id)}>
-                <img id="nftImage" src={nft.imgURL} />
-              </div>
-              <h1>{nft.name}</h1>
-              <div>
-                <img id="artistImage" src={nft.author} />
-              </div>
-            </div>
-          );
-        })}
+    <div id="singleNFTContainer" key={selectedNFT.id}>
+      <div className="nftContainer">
+        <img id="nftImage" src={selectedNFT.imgURL} />
+      </div>
+      <div className="title">{selectedNFT.name}</div>
+      <div>
+        <img id="artistImage" src={selectedNFT.author} />
       </div>
     </div>
   );

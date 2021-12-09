@@ -31,10 +31,13 @@ app.get("/nft", async (req, res, next) => {
 });
 app.get("/nft/:id", async (req, res, next) => {
   try {
-    const nft = await NFT.findByPk(req.params.id, {
-      include: [Artist],
-    });
-    res.send(nft);
+    res.send(
+      await NFT.findOne({
+        where: {
+          id: req.params.id,
+        },
+      })
+    );
   } catch (ex) {
     next(ex);
   }
@@ -43,7 +46,11 @@ app.get("/nft/:id", async (req, res, next) => {
 //Get Artist, Get Artist by ID
 app.get("/artist", async (req, res, next) => {
   try {
-    res.send(await Artist.findAll());
+    res.send(
+      await Artist.findAll({
+        include: [NFT],
+      })
+    );
   } catch (error) {
     next(error);
   }
@@ -51,7 +58,11 @@ app.get("/artist", async (req, res, next) => {
 
 app.get("/artist/:id", async (req, res, next) => {
   try {
-    res.send(await Artist.findByPk(req.params.id));
+    res.send(
+      await Artist.findByPk(req.params.id, {
+        include: [NFT],
+      })
+    );
   } catch (error) {
     next(error);
   }

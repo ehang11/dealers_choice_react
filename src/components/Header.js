@@ -1,32 +1,33 @@
 import React from "react";
 
-const Header = ({ SelectedNFT }) => {
+const Header = ({ selectedNFT, returnGallery }) => {
   return (
-    <ul className="nav">
-      <li className="header"> MetaGallery: NFT Art Gallery </li>
+    <nav className="nav">
+      {/* <div className = "LOGO"> </div> */}
+      <div className="header"> MetaGallery: NFT Art Gallery </div>
 
       <button
         type="button"
-        className="explore"
-        onClick={(e) => {
-          e.preventDefault();
-          window.location.href = "http://localhost:8000/";
-        }}
-      >
-        Explore
-      </button>
-      {/* 
-      <button
-        type="button"
-        className="create"
+        className="nav-button"
         onClick={(e) => {
           e.preventDefault();
           window.location.href = "http://localhost:8000/create";
         }}
       >
-        Create
-      </button> */}
-    </ul>
+        CREATE
+      </button>
+
+      <button
+        type="button"
+        className="nav-button"
+        onClick={(e) => {
+          e.preventDefault();
+          window.location.href = "http://localhost:8000/";
+        }}
+      >
+        EXPLORE
+      </button>
+    </nav>
   );
 };
 
